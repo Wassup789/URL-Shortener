@@ -32,9 +32,7 @@ This code is licensed under the MIT License
  * Add options
 
 ### Screenshots
-[![Screenshot 1](http://i.imgur.com/iwlq9vA.png)](http://i.imgur.com/iwlq9vA.png)
-[![Screenshot 2](http://i.imgur.com/wlbw6vx.png)](http://i.imgur.com/wlbw6vx.png)
-[![Screenshot 3](http://i.imgur.com/H08EfDR.png)](http://i.imgur.com/H08EfDR.png)
+[![Screenshot 1](http://i.imgur.com/BOXwfYe.png)](http://i.imgur.com/BOXwfYe.png)
 
 ## Changelog
 [See CHANGELOG.md][CLog.md]
