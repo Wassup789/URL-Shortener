@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css" />
+	<script src="jquery.min.js"></script>
+	<script src="qrcode.min.js"></script>
+	<script src="settings.js"></script>
+</head>
+<body style="display: none">
+<div class="header">
+	<table class="hContainer">
+		<td align="center">
+			<span class="hText">URL</span>
+			<img class="hImg" src="img/48.png" height="30">
+			<span class="hText">Shortener</span>
+		</td>
+	</table>
+</div>
+<div class="content">
+	<div class="overlay" style="display: none;"></div>
+	<div class="qrCode" style="display: none;"></div>
+	<div class="cContainer">
+		<a class="cUrl"></a>
+		<input class="cUrl2">
+		<div class="btnContainer">
+			<table class="btnTable">
+				<td align="center">
+					<div class="clipBtn" title="Copy to Clipboard"></div>
+					<div class="qrBtn" title="Generate QR Code"></div>
+				</td>
+			</table>
+		</div>
+		<div class="btnOverlay" style="display: none;">
+			<span class="btnOText"></span>
+		</div>
+	</div>
+</div>
+<span class="version">Version 0.01</span>
+</body>
+</html>
