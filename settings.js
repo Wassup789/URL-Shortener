@@ -4,7 +4,7 @@ $(document).ready(function(){
 	
 	var manifest = chrome.runtime.getManifest();
 	
-	var beta = false;
+	var beta = true;
 	if(beta)
 		$(".version").html("Version " + manifest.version + " beta<br/>by Wassup789");
 	else
@@ -12,13 +12,18 @@ $(document).ready(function(){
 	
 	var error = false;
 	
+	if(localStorage.getItem("domain") == null || localStorage.getItem("domain") == 0)
+		localStorage.setItem("domain", "tinyurl");
+	
+	$(".urlSelect").val(localStorage.getItem("domain"));
+	
 	chrome.tabs.query({active: true, lastFocusedWindow: true}, function(callback) {
 		var link = callback[0].url;
 		$.ajax({
 			async: false,
 			type: "GET",
 			dataType: "text",
-			url: "http://data.wassup789.cz.cc/tinyurl?url=" + encodeURIComponent(link),
+			url: "http://data.wassup789.cz.cc/" + localStorage.getItem("domain") + "?url=" + encodeURIComponent(link),
 			success: function(data) {
 				$("body").fadeIn("fast");
 				
@@ -84,4 +89,13 @@ $(document).ready(function(){
 		$(".overlay").fadeOut("fast");
 		$(".qrCode").fadeOut("fast");
 	}
+	
+	$(".urlSelect").change(function(){
+		localStorage.setItem("domain", $(".urlSelect").val());
+		$(".btnOverlay").fadeIn("slow");
+		$(".btnOText").text("Set domain to " + $(".urlSelect").find(":selected").text());
+		setTimeout(function(){
+			window.location.reload()
+		}, 1000);
+	});
 });
