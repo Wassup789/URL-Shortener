@@ -152,6 +152,14 @@ a:focus,a:active {color:#FF0000}
 	z-index: 999;
 }
 
+.status {
+	position: absolute;
+	color: #FFFFFF;
+	font-size: 18px;
+	z-index: 100;
+	-webkit-user-select: none;
+}
+
 .version {
 	font-size: 10px;
 	font-weight: normal;

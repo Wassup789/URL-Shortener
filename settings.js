@@ -10,6 +10,8 @@ $(document).ready(function(){
 	else
 		$(".version").html("Version " + manifest.version + "<br/>by Wassup789");
 	
+	var error = false;
+	
 	chrome.tabs.query({active: true, lastFocusedWindow: true}, function(callback) {
 		var link = callback[0].url;
 		$.ajax({
@@ -30,6 +32,16 @@ $(document).ready(function(){
 				});
 				$(".qrCode").css("top", Math.max(0, (($(window).height() - $(".qrCode").outerHeight()) / 2) + $(window).scrollTop()) + "px");
 				$(".qrCode").css("left", Math.max(0, (($(window).width() - $(".qrCode").outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+			}, error: function() {
+				error = true;
+				$("body").fadeIn("fast");
+				$(".status").fadeIn("fast");
+				$(".overlay").fadeIn("fast");
+				$(".overlay").css("cursor", "default");
+				$(".status").text("Could not connect to server");
+				$(".status").css("text-shadow", "0 0 10px #FF0000");
+				$(".status").css("top", Math.max(0, (($(window).height() - $(".status").outerHeight()) / 2) + $(window).scrollTop()) + "px");
+				$(".status").css("left", Math.max(0, (($(window).width() - $(".status").outerWidth()) / 2) + $(window).scrollLeft()) + "px");
 			}
 		});
 	});
@@ -49,15 +61,18 @@ $(document).ready(function(){
 	});
 	
 	$(document).on("click", ".qrBtn", function(){
-		showQROverlay();
+		if(!error)
+			showQROverlay();
 	});
 	
 	$(document).on("click", ".overlay", function(){
-		hideQROverlay();
+		if(!error)
+			hideQROverlay();
 	});
 
 	$(document).on("click", ".qrCode", function(){
-		hideQROverlay();
+		if(!error)
+			hideQROverlay();
 	});
 	
 	function showQROverlay(){
