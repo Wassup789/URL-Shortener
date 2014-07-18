@@ -1,6 +1,6 @@
 # URL Shortener #
 
-Shorten your URL using tinyurl.com with a click of a button.
+Shorten your URL with goo.gl, bit.ly or tinyurl.com with a click of a button.
 
 This code is licensed under the MIT License
 
@@ -19,7 +19,7 @@ This code is licensed under the MIT License
 
 **Latest Stable Release:**
 
- - **Version 1.0.0.0** - 07-16-2014 19:21 PDT
+ - **Version 1.0.1.0** - 07-17-2014 22:28 PDT
  - [Download Here via Google Drive][Dld_Latest_GD]
  - [Direct Link via Dropbox][Dld_Latest_DB]
 
@@ -37,9 +37,9 @@ This code is licensed under the MIT License
 ## Changelog
 [See CHANGELOG.md][CLog.md]
 
+  [Dld_Latest_GD]: https://drive.google.com/file/d/0B_WfQfUn7IraVWNOVmVueG9OS2s/edit?usp=sharing
 
-  [Dld_Latest_GD]: https://drive.google.com/file/d/0B_WfQfUn7IraamZGOUxTX0pCd28/edit?usp=sharing
-  [Dld_Latest_DB]: https://dl.dropboxusercontent.com/u/14210090/URL%20Shortener/URL_Shortener_v1.0.0.0.crx
+  [Dld_Latest_DB]: https://dl.dropboxusercontent.com/u/14210090/URL%20Shortener/URL_Shortener_v1.0.1.0.crx
   [Dld_Archive]: https://drive.google.com/folderview?id=0B_WfQfUn7IraLVNBQmJOWFFpSmc&usp=sharing
   
   [CLog.md]: https://github.com/Wassup789/URL-Shortener/blob/master/CHANGELOG.md
