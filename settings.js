@@ -28,7 +28,8 @@ $(document).ready(function(){
 				$("body").fadeIn("fast");
 				
 				$(".cUrl").html(data);
-				$(".cUrl").attr("href", data);
+				if(data != "Too many requests")
+					$(".cUrl").attr("href", data);
 				$(".cUrl2").val(data);
 				new QRCode(document.getElementsByClassName("qrCode")[0], {
 					text: data,
@@ -52,7 +53,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on("click", "a", function(){
-		if($(this).attr("href") != "" || $(this).attr("href") != null)
+		if($(this).attr("href") != null)
 			chrome.tabs.create({url: $(this).attr("href")});
 	});
 	
