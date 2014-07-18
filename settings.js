@@ -15,7 +15,7 @@ $(document).ready(function(){
 	var error = false;
 	
 	if(localStorage.getItem("domain") == null || localStorage.getItem("domain") == 0)
-		localStorage.setItem("domain", "tinyurl");
+		localStorage.setItem("domain", "google");
 	
 	$(".urlSelect").val(localStorage.getItem("domain"));
 	
@@ -24,6 +24,7 @@ $(document).ready(function(){
 	
 	chrome.tabs.query({active: true, lastFocusedWindow: true}, function(callback) {
 		var link = callback[0].url;
+		if(isValidUrl(link)){
 		$.ajax({
 			async: false,
 			type: "GET",
@@ -31,8 +32,10 @@ $(document).ready(function(){
 			url: "http://data.wassup789.cz.cc/" + localStorage.getItem("domain") + "?url=" + encodeURIComponent(link),
 			success: function(data) {
 				$(".cUrl").text(data);
-				if(data != "Too many requests")
+				if(data != "Too many requests"){
 					$(".cUrl").attr("href", data);
+					error = true;
+				}
 				$(".cUrl2").val(data);
 				new QRCode(document.getElementsByClassName("qrCode")[0], {
 					text: data,
@@ -53,6 +56,10 @@ $(document).ready(function(){
 				$(".status").css("left", Math.max(0, (($(window).width() - $(".status").outerWidth()) / 2) + $(window).scrollLeft()) + "px");
 			}
 		});
+		}else{
+			$(".cUrl").text("Invalid URL");
+			error = true;
+		}
 	});
 	
 	$(document).on("click", "a", function(){
@@ -61,12 +68,14 @@ $(document).ready(function(){
 	});
 	
 	$(document).on("click", ".clipBtn", function(){
-		$(".cUrl2").select();
-		document.execCommand("SelectAll");
-		document.execCommand("Copy");
-		$(".btnOverlay").fadeIn("slow");
-		$(".btnOText").text("Copied to Clipboard");
-		$(".btnOverlay").delay(1000).fadeOut("slow");
+		if(!error){
+			$(".cUrl2").select();
+			document.execCommand("SelectAll");
+			document.execCommand("Copy");
+			$(".btnOverlay").fadeIn("slow");
+			$(".btnOText").text("Copied to Clipboard");
+			$(".btnOverlay").delay(1000).fadeOut("slow");
+		}
 	});
 	
 	$(document).on("click", ".qrBtn", function(){
@@ -102,4 +111,7 @@ $(document).ready(function(){
 			window.location.reload()
 		}, 1000);
 	});
+	function isValidUrl(value) {
+		return /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(value);
+	}
 });
