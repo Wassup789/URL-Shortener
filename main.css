@@ -10,9 +10,8 @@ body{
 	text-shadow: none;
 	font-family: Arial, sans-serif;
 	font-weight: 100;
-	overflow-x:hidden;
 	background: #EFEFEF;
-	width: 250px;
+	min-width: 250px;
 	box-sizing:border-box;
 }
 
@@ -40,6 +39,7 @@ a:focus,a:active {color:#FF0000}
 
 .hImg {
 	vertical-align: middle;
+	pointer-events: none;
 }
 
 .hText {

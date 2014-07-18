@@ -2,6 +2,8 @@ $(document).ready(function(){
 	var logger = window.console.log;
 	window.console.log = function(){};
 	
+	$("#content").css("height", $("#main").height());
+	
 	var manifest = chrome.runtime.getManifest();
 	
 	var beta = true;
@@ -17,6 +19,9 @@ $(document).ready(function(){
 	
 	$(".urlSelect").val(localStorage.getItem("domain"));
 	
+	$("body").fadeIn("fast");	
+	$(".cUrl").text("Shortening...");
+	
 	chrome.tabs.query({active: true, lastFocusedWindow: true}, function(callback) {
 		var link = callback[0].url;
 		$.ajax({
@@ -25,9 +30,7 @@ $(document).ready(function(){
 			dataType: "text",
 			url: "http://data.wassup789.cz.cc/" + localStorage.getItem("domain") + "?url=" + encodeURIComponent(link),
 			success: function(data) {
-				$("body").fadeIn("fast");
-				
-				$(".cUrl").html(data);
+				$(".cUrl").text(data);
 				if(data != "Too many requests")
 					$(".cUrl").attr("href", data);
 				$(".cUrl2").val(data);
