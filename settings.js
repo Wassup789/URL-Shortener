@@ -32,10 +32,8 @@ $(document).ready(function(){
 			url: "http://data.wassup789.cz.cc/" + localStorage.getItem("domain") + "?url=" + encodeURIComponent(link),
 			success: function(data) {
 				$(".cUrl").text(data);
-				if(data != "Too many requests"){
+				if(data != "Too many requests")
 					$(".cUrl").attr("href", data);
-					error = true;
-				}
 				$(".cUrl2").val(data);
 				new QRCode(document.getElementsByClassName("qrCode")[0], {
 					text: data,
