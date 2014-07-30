@@ -29,7 +29,7 @@ $(document).ready(function(){
 			async: false,
 			type: "GET",
 			dataType: "text",
-			url: "http://data.wassup789.cz.cc/" + localStorage.getItem("domain") + "?url=" + encodeURIComponent(link),
+			url: "http://data.wassup789.com/urlshortener/" + localStorage.getItem("domain") + "?url=" + encodeURIComponent(link),
 			success: function(data) {
 				$(".cUrl").text(data);
 				if(data != "Too many requests")
