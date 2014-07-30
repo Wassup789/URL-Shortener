@@ -6,7 +6,7 @@ $(document).ready(function(){
 	
 	var manifest = chrome.runtime.getManifest();
 	
-	var beta = true;
+	var beta = false;
 	if(beta)
 		$(".version").html("Version " + manifest.version + " beta<br/>by Wassup789");
 	else
