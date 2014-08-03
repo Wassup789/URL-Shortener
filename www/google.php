@@ -8,7 +8,7 @@ $longUrl = $_GET["url"];
 
 $origin = $_SERVER["HTTP_ORIGIN"];
 
-if($origin != "chrome-extension://nmmlgajflaadkcfcdiblldhdhpnbmhii" && $origin != "chrome-extension://inkbdhkochhhjjbckkejpganmobahlpj")
+if($origin != "chrome-extension://inkbdhkochhhjjbckkejpganmobahlpj")
 	exit();
 
 $apiKey = "GOOGLAPIKEYHERE";
