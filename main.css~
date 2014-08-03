@@ -150,8 +150,6 @@ a:focus,a:active {color:#FF0000}
 	position: absolute;
 	box-shadow: 0 0 20px #000000;
 	z-index: 999;
-	background-color: #FFFFFF;
-	padding: 5px;
 }
 
 .status {
