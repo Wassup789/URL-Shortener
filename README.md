@@ -37,9 +37,8 @@ This code is licensed under the MIT License
 ## Changelog
 [See CHANGELOG.md][CLog.md]
 
-  [Dld_Latest_GD]: https://drive.google.com/file/d/0B_WfQfUn7IraeHJ3ZFNFTG1wYU0/edit?usp=sharing
-
-  [Dld_Latest_DB]: https://dl.dropboxusercontent.com/u/14210090/URL%20Shortener/URL_Shortener_v1.0.2.0.crx
-  [Dld_Archive]: https://drive.google.com/folderview?id=0B_WfQfUn7IraLVNBQmJOWFFpSmc&usp=sharing
+  [Dld_Latest_GD]: http://goo.gl/SI5rbl
+  [Dld_Latest_DB]: http://db.orangedox.com/9wI5sxgVPQEflnJlI8/URL_Shortener_v1.0.2.0.crx
+  [Dld_Archive]: http://goo.gl/i3HVNK
   
   [CLog.md]: https://github.com/Wassup789/URL-Shortener/blob/master/CHANGELOG.md
