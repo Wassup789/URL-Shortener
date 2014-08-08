@@ -3,20 +3,28 @@
 The URL Shortener extension uses these PHP scripts to return the shortened to you.
 This is used to throttle multiple spam requests, ensure validity of the request and hide API keys.
 
-## Installation
-
-#### Requirements
+## Requirements
 
  - An Apache server with PHP & MySQL installed
  - php_cURL and mod_headers installed
- - Basic knowledge of PHP and MySQL
+ - A basic knowledge of PHP and MySQL
 
+## Notes
+
+ - **MySQL is NOT needed if** you do not plan on creating an IP throttle. (You'd have to remove the code yourself) 
+ - The first three lines of the **.htaccess file are optional**
+  - It makes the URL look like this:
+  - (Before) http://example.com/api/google.php
+  - (After) http://example.com/api/google
+ - **Cross-Origin headers are required** if the URL is received by Javascript
+
+## Installation
 
 1. **Setting up MySQL**
   1. **Create a database** (Any name is fine)
   2. Edit the variables in the **"connection.php"** file to match your MySQL configuration
   3. Execute the **"executethis.sql"** file in MySQL
-1. **Setting up API Keys**
+2. **Setting up API Keys**
   1. **Bit.ly**
     1. **Register an account** at: https://bitly.com/
     2. Once registered go to: https://bitly.com/a/your_api_key to receive your API key
@@ -35,3 +43,5 @@ This is used to throttle multiple spam requests, ensure validity of the request 
     10. Type in the **IP Address of the server** that hosts these files on and press "Create"
     11. You have created your API key, **copy the key** and **edit the "google.php"** file
     12. **Find $apiKey** and replace **"GOOGLAPIKEYHERE"** to the API key created earlier
+3. **Code Changes**
+ 1. Edit or remove the "if $origin statement" if needed (Note: Currently, it will only work with the URL Shortener extension)
