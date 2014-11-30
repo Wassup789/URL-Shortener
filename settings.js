@@ -26,10 +26,9 @@ $(document).ready(function(){
 		var link = callback[0].url;
 		if(isValidUrl(link)){
 		$.ajax({
-			async: false,
 			type: "GET",
 			dataType: "text",
-			url: "http://data.wassup789.com/urlshortener/" + localStorage.getItem("domain") + "?url=" + encodeURIComponent(link),
+			url: "https://data.wassup789.com/urlshortener/" + localStorage.getItem("domain") + "?url=" + encodeURIComponent(link),
 			success: function(data) {
 				$(".cUrl").text(data);
 				if(data != "Too many requests")

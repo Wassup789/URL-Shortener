@@ -1,4 +1,6 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+
 include("connection.php");
 if(!isset($_GET["url"])){
 	header("HTTP/1.1 400 Bad Request");
