@@ -31,7 +31,7 @@ This code is licensed under the MIT License
  * Add more websites
  * Add options
 
-### Screenshots
+## Screenshots
 [![Screenshot 1](http://i.imgur.com/tIDBhOi.png)](http://i.imgur.com/tIDBhOi.png)
 
 ## Changelog
