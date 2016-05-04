@@ -1,5 +1,14 @@
 Changelog
 =====
+## v1.1.0.0 (XX-XX-20XX)
+ * Major code rewrite
+ * All connections are client-side
+ * Design tweaks
+ * Changed icon assets
+
+## v1.0.2.1
+ * Fixed domains
+
 ## v1.0.2.0
  * Swapped domains
  * Added data source

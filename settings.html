@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="main.css" />
-	<script src="jquery.min.js"></script>
-	<script src="qrcode.min.js"></script>
-	<script src="settings.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="js/jquery.min.js"></script>
+	<script src="js/qrcode.min.js"></script>
+	<script src="js/settings.js"></script>
 </head>
 <body>
-<div class="header">
-	<table class="hContainer">
-		<td align="center">
-			<span class="hText">URL</span>
-			<img class="hImg" src="img/48.png" height="30">
-			<span class="hText">Shortener</span>
-		</td>
-	</table>
-</div>
-<div class="content">
-	<div class="overlay" style="display: none;"></div>
-	<div class="qrCode" style="display: none;"></div>
-	<div class="status" style="display: none;"></div>
-	<div class="cContainer">
-		<a class="cUrl"></a>
-		<input class="cUrl2">
-		<div class="btnContainer">
-			<table class="btnTable">
-				<td align="center">
-					<div class="clipBtn" title="Copy to Clipboard"></div>
-					<div class="qrBtn" title="Generate QR Code"></div>
-				</td>
-			</table>
+	<div id="overlay" style="display: none;"></div>
+	<div id="qrCode" style="display: none;"></div>
+	<div id="header">
+		<span id="header_text">URL Shortener</span>
+	</div>
+	<div id="content">
+		<div id="url_output">
+			<a href="#">Shortening...</a>
+			<input id="url_output_input">
 		</div>
-		<div class="btnOverlay" style="display: none;">
-			<span class="btnOText"></span>
-		</div>
-		<div class="optionsContainer">
-			<div class="urlContainer">
-				<span class="urlLabel">Domain: </span>
-				<select class="urlSelect">
-					<option value="bitly">bit.ly</option>
-					<option value="google">goo.gl</option>
-					<option value="tinyurl">tinyurl.com</option>
-				</select>
+		<div id="button_content">
+			<div id="button_container">
+				<div id="button_clipboard" title="Copy to Clipboard"></div>
+				<div id="button_qr" title="Generate QR Code"></div>
 			</div>
 		</div>
+		<div id="button_container_overlay" style="display: none;">
+			<div id="button_container_overlayContainer">
+				<div id="button_container_overlayText">Copied to Clipboard</div>
+			</div>
+		</div>
+		<div id="option_container">
+				<span id="option_label">Domain: </span>
+				<select id="option">
+					<option value="bitly">bit.ly</option>
+					<option value="jmp">j.mp</option>
+					<option value="google">goo.gl</option>
+					<!--option value="tinyurl">tinyurl.com</option-->
+				</select>
+		</div>
 	</div>
-</div>
-<span class="version">Version 0.01</span>
+	<span id="version">Version <span id="version_number">0.0.0.0</span><br>by <a href="https://github.com/Wassup789">Wassup789</a></span>
 </body>
 </html>
