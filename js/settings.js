@@ -133,14 +133,12 @@ $(function(){
 	/**
 	 *  Shortens a URL using bit.ly and j.mp
 	 *  
-	 *  IMPORTANT: CORS MAKES THIS IMPOSSIBLE (for now)
-	 *  
 	 *  @param {string} url A valid non-URI encoded URL
 	 */
 	function shortenTinyurl(url) {
 		$.ajax({
 			method: "GET",
-			url: "https://tinyurl.com/api-create.php?url=" + url
+			url: "https://apps.wassup789.com/urlshortener/tinyurl?url=" + url
 		}).done(function(data) {
 			setUrl(data);
 		}).fail(function(jqXHR, textStatus, errorThrown) {
