@@ -35,7 +35,17 @@
 					<option value="jmp">j.mp</option>
 					<option value="google">goo.gl</option>
 					<option value="tinyurl">tinyurl.com</option>
+					<option id="option_polr" value="polr">Customized Polr</option>
 				</select>
+				<div id="option_polr_container">
+					<a id="option_polr_show">show custom config</a>
+					<a id="option_polr_hide">hide custom config</a>
+					<div id="option_polr_fields">
+						<label for="polr-url">Polr base URL:</label><input id="option_polr_url" type="text" name="polr-url" value="">
+						<label for="polr-apikey">Polr API key:</label><input id="option_polr_apikey" type="text" name="polr-apikey" value="">
+						<a id="option_polr_save">Save</a>
+					</div>
+				</div>
 		</div>
 	</div>
 	<span id="version">Version <span id="version_number">0.0.0.0</span><br>by <a href="https://github.com/Wassup789">Wassup789</a></span>

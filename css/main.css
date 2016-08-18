@@ -105,13 +105,21 @@ a:focus,a:active {color:#FF0000}
 	-webkit-filter: invert(100%);
 }
 #option_container {
-	height: 50px;
 	padding: 10px;
 	text-align: center;
 }
 #option {
 	width: 140px;
 }
+
+#option_polr_container {
+	display: none;
+}
+
+#option_polr_save {
+	display: none;
+}
+
 #url_output_input {
 	position: absolute;
 	margin-left: -200vw;
