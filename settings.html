@@ -38,10 +38,9 @@
 					<option id="option_polr" value="polr">Customized Polr</option>
 				</select>
 				<div id="option_polr_container">
-					<a id="option_polr_show">show custom config</a>
-					<a id="option_polr_hide">hide custom config</a>
+					<a id="option_polr_config" data-polr-action=""> custom config</a>
 					<div id="option_polr_fields">
-						<label for="polr-url">Polr base URL:</label><input id="option_polr_url" type="text" name="polr-url" value="">
+						<label for="polr-url">Polr base URL:</label><div id="polr-url-fakeinput"><span id="polr-url-https">https://</span><input id="option_polr_url" type="text" name="polr-url" value=""></div>
 						<label for="polr-apikey">Polr API key:</label><input id="option_polr_apikey" type="text" name="polr-apikey" value="">
 						<a id="option_polr_save">Save</a>
 					</div>

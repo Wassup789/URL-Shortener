@@ -49,38 +49,37 @@ $(function(){
 
   startShortening();
 
-	$("#option_polr_hide").click(function(){
-		$("#option_polr_fields").hide();
-		$("#option_polr_show").show();
-		$("#option_polr_hide").hide();
-	});
-	$("#option_polr_show").click(function(){
-		$("#option_polr_fields").show();
-		$("#option_polr_show").hide();
-		$("#option_polr_hide").show();
+	$("#option_polr_config").click(function(){
+		$("#option_polr_fields").toggle();
+		updatePolrConfig();
 	});
 
-  $("#option_polr_fields input").bind("change keyup",function(){
-		if ($("#option_polr_apikey").val() != "" && $("#option_polr_url").val() != "" ) {
-			$("#option_polr_save").show();
-		} else {
-			$("#option_polr_save").hide();
-		}
+	$("#polr-url-https").click(function(){
+		$("#option_polr_url").focus();
 	})
 
-	$("#option_polr_save").click(function() {
-		apiData.polr.apiKey=$("#option_polr_apikey").val();
-		apiData.polr.url=$("#option_polr_url").val();
+	$("#option_polr_url").focus(function(){
+		$("#polr-url-fakeinput").addClass("focus");
+	})
 
-		localStorage.setItem("polr_api" , apiData.polr.apiKey);
-		localStorage.setItem("polr_url" , apiData.polr.url);
+	$("#option_polr_url").focusout(function(){
+		$("#polr-url-fakeinput").removeClass("focus");
+	})
 
-		$("#option_polr").html(apiData.polr.url + " - Custom");
+  $("#option_polr_fields input").bind("change keyup",function(){
+		if ($("#option_polr_apikey").val().length==30 && isValidUrl("https://" + $("#option_polr_url").val())) {
+			apiData.polr.apiKey=$("#option_polr_apikey").val();
+		 	apiData.polr.url=$("#option_polr_url").val();
 
-		updatePolrOptions();
+			localStorage.setItem("polr_api" , apiData.polr.apiKey);
+			localStorage.setItem("polr_url" , apiData.polr.url);
 
-		startShortening();
+			$("#option_polr").html(apiData.polr.url + " - Custom");
 
+			updatePolrOptions();
+
+			startShortening();
+		}
 	})
 
   /**
@@ -291,18 +290,25 @@ $(function(){
   function updatePolrOptions() {
 		 if ($("#option").find(":selected").attr('value')=="polr") {
 			 if (apiData.polr.apiKey == "" || apiData.polr.url == "") {
-			 		$("#option_polr_fields").show();
-			 		$("#option_polr_hide").hide();
-			 		$("#option_polr_show").hide();
+			 		$("#option_polr_config").hide();
+					$("#option_polr_fields").show();
 		 	 } else {
-			 		$("#option_polr_fields").hide();
-			 		$("#option_polr_hide").hide();
-			  	$("#option_polr_show").show();
+			 		$("#option_polr_config").show();
+					$("#option_polr_config").get()[0].dataset.polrAction="Show";
 		   }
+			 updatePolrConfig();
 			 $("#option_polr_container").show();
 		 } else {
 			 $("#option_polr_container").hide();
 		 }
+	}
+
+	/**
+	 * Update the display of polr custom config link
+	 */
+	function updatePolrConfig() {
+		$("#option_polr_config").get()[0].dataset.polrAction =
+		 	$("#option_polr_fields").is(":visible")?"Hide":"Show"
 	}
 
 	/**
