@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<script src="js/jquery.min.js"></script>
-	<script src="js/qrcode.min.js"></script>
-	<script src="js/settings.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/qrcode.min.js"></script>
+    <script src="js/settings.js"></script>
 </head>
 <body>
-	<div id="overlay" style="display: none;"></div>
-	<div id="qrCode" style="display: none;"></div>
-	<div id="header">
-		<span id="header_text">URL Shortener</span>
-	</div>
-	<div id="content">
-		<div id="url_output">
-			<a href="#">Shortening...</a>
-			<input id="url_output_input">
-		</div>
-		<div id="button_content">
-			<div id="button_container">
-				<div id="button_clipboard" title="Copy to Clipboard"></div>
-				<div id="button_qr" title="Generate QR Code"></div>
-			</div>
-		</div>
-		<div id="button_container_overlay" style="display: none;">
-			<div id="button_container_overlayContainer">
-				<div id="button_container_overlayText">Copied to Clipboard</div>
-			</div>
-		</div>
-		<div id="option_container">
-				<span id="option_label">Domain: </span>
-				<select id="option">
-					<option value="bitly">bit.ly</option>
-					<option value="jmp">j.mp</option>
-					<option value="google">goo.gl</option>
-					<option value="tinyurl">tinyurl.com</option>
-					<option id="option_polr" value="polr">Customized Polr</option>
-				</select>
-				<div id="option_polr_container">
-					<a id="option_polr_config" data-polr-action=""> custom config</a>
-					<div id="option_polr_fields">
-						<label for="polr-url">Polr base URL:</label><div id="polr-url-fakeinput"><span id="polr-url-https">https://</span><input id="option_polr_url" type="text" name="polr-url" value=""></div>
-						<label for="polr-apikey">Polr API key:</label><input id="option_polr_apikey" type="text" name="polr-apikey" value="">
-						<a id="option_polr_save">Save</a>
-					</div>
-				</div>
-		</div>
-	</div>
-	<span id="version">Version <span id="version_number">0.0.0.0</span><br>by <a href="https://github.com/Wassup789">Wassup789</a></span>
+<div id="overlay" style="display: none;"></div>
+<div id="qrCode" style="display: none;"></div>
+<div id="header">
+    <span id="header_text">URL Shortener</span>
+</div>
+<div id="content">
+    <div id="url_output">
+        <a href="#">Shortening...</a>
+        <input id="url_output_input">
+    </div>
+    <div id="button_content">
+        <div id="button_container">
+            <div id="button_clipboard" title="Copy to Clipboard"></div>
+            <div id="button_qr" title="Generate QR Code"></div>
+        </div>
+    </div>
+    <div id="button_container_overlay" style="display: none;">
+        <div id="button_container_overlayContainer">
+            <div id="button_container_overlayText">Copied to Clipboard</div>
+        </div>
+    </div>
+    <div id="option_container">
+        <span id="option_label">Domain: </span>
+        <select id="option">
+            <option value="bitly">bit.ly</option>
+            <option value="jmp">j.mp</option>
+            <option value="google">goo.gl</option>
+            <option value="tinyurl">tinyurl.com</option>
+            <option id="option_polr" value="polr">Customized Polr</option>
+        </select>
+        <div id="option_polr_container">
+            <a id="option_polr_config" data-polr-action=""> custom config</a>
+            <div id="option_polr_fields">
+                <label for="option_polr_url">Polr base URL:</label>
+                <input id="option_polr_url" type="text" name="polr-url" value="">
+                <label for="option_polr_apikey">Polr API key:</label>
+                <input id="option_polr_apikey" type="text" name="polr-apikey" value="">
+                <a id="option_polr_save">Save</a>
+            </div>
+        </div>
+    </div>
+</div>
+<span id="version">Version <span id="version_number">0.0.0.0</span><br>by <a href="https://github.com/Wassup789">Wassup789</a></span>
 </body>
 </html>

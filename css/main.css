@@ -170,29 +170,7 @@ input,textarea{-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);-moz-box-
 input[type="file"]:focus,input[type="radio"]:focus,input[type="checkbox"]:focus,select:focus{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;outline:thin dotted #333;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
 input:focus:required:invalid,textarea:focus:required:invalid,select:focus:required:invalid{color:#b94a48;border-color:#ee5f5b;}input:focus:required:invalid:focus,textarea:focus:required:invalid:focus,select:focus:required:invalid:focus{border-color:#e9322d;-webkit-box-shadow:0 0 6px #f8b9b7;-moz-box-shadow:0 0 6px #f8b9b7;box-shadow:0 0 6px #f8b9b7;}
 
-#polr-url-https {
-    float: left;
-    padding: 0px;
-    padding-left: 5px;
-    margin: 0px;
-}
 #polr-url-field{display:block;overflow:hidden}
-
-#option_polr_url {
-    height: 14px;
-    width: initial;
-    padding: 0px;
-    margin: 0px;
-    border-radius: initial;
-    box-sizing: initial;
-    border: 0px solid;
-    border-width: inherit;
-    outline-width: 0px;
-    outline: none;
-    padding-top: 0px;
-    border-style: none;
-    box-shadow: initial;
-}
 
 #polr-url-fakeinput {
     padding: 0px;
